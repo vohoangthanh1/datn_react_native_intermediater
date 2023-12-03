@@ -25,7 +25,7 @@ import AppNavigation from './src/components/navigation/AppNavigation';
 function App() {
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1}}>
       <UserProvider>
         <AppNavigation />
       </UserProvider>
