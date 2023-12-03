@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 import ProductNavigation from './ProductNavigation';
 import Home from '../../Screens/Home';
+
+
 const BottomTabs = () => {
     return (
         <Tab.Navigator screenOptions={{ headerShown: false }}>

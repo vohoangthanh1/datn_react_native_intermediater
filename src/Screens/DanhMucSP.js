@@ -5,8 +5,7 @@ import AppSearch2 from '../components/AppSearch2'
 import { DanhMucSPStyles } from '../styleSheets/DanhMucSPStyles'
 import { SelectCountry } from 'react-native-element-dropdown';
 import { ItemProductStyles } from '../styleSheets/ItemProductStyles'
-import ItemProduct from '../item/ItemProduct'
-
+import ItemProduct from '../Item/ItemProduct'
 const DanhMucSP = () => {
     const [country, setCountry] = useState(null)
     const [type, setType] = useState(null)
