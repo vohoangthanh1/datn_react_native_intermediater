@@ -1,17 +1,17 @@
-import { View, Text, Image, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, Image, ScrollView, StyleSheet, FlatList } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ItemProductStylesSP } from '../styleSheets/ItemProductStylesSP'
 import AppSearch2 from '../components/AppSearch2'
 import { DanhMucSPStyless } from '../styleSheets/DanhMucSPStyless'
 import { SelectCountry } from 'react-native-element-dropdown';
-import ItemProductSP from '../Item/ImtemProductSP'
+import ItemProductSP from '../item/ImtemProductSP'
 
 
 const DanhMucSPP = () => {
     const [country, setCountry] = useState(null)
     const [type, setType] = useState(null)
-    const [loc, setLoc] = useState(null)
+    const [loc, setLoc] = useState("Lọc")
     const local_data = [
         {
             value: '1',
@@ -74,10 +74,9 @@ const DanhMucSPP = () => {
 
         }
     ];
-
-
+    const data_header = ["Dung lượng cao", "Game", "Trả góp", "Bảo hành", "Chưa dùng", "Pin trâu"]
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
             <AppSearch2 />
             <View style={DanhMucSPStyless.View1}>
                 <SelectCountry
@@ -169,19 +168,29 @@ const DanhMucSPP = () => {
 
 
             </View>
+            <View style={DanhMucSPStyless.Scovil}>
+                <FlatList
+                    horizontal={true}
+                    data={data_header}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => <Text style={DanhMucSPStyless.TextHangK}>{item}</Text>}
+                />
+            </View>
 
-            <ScrollView horizontal={true} style={DanhMucSPStyless.Scovil}>
-                <Text style={DanhMucSPStyless.TextHangK}>Dung lượng cao</Text>
-                <Text style={DanhMucSPStyless.TextHangK}>Game</Text>
-                <Text style={DanhMucSPStyless.TextHangK}>Trả góp</Text>
-                <Text style={DanhMucSPStyless.TextHangK}>Bảo hành</Text>
-                <Text style={DanhMucSPStyless.TextHangK}>Chưa dùng</Text>
-                <Text style={DanhMucSPStyless.TextHangK}>Pin trâu</Text>
-            </ScrollView>
-            <View style={{ width: "100%", flexWrap: "wrap", flexDirection: "row" }}>
+
+
+
+            {/* <View style={{ width: "100%", flexWrap: "wrap", flexDirection: "row" }}>
                 <ItemProductSP />
 
-            </View>
+            </View> */}
+            <FlatList
+                numColumns={2}
+                data={local_data}
+                keyExtractor={(data) => data.id}
+                renderItem={({ item }) => <ItemProductSP data={item} />}
+            />
+
         </SafeAreaView >
 
     )
