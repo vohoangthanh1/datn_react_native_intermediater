@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, Image, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import { AppStyle } from '../constants/AppStyle'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -7,7 +7,7 @@ const Login = () => {
     return (
         <View style={[AppStyle.container]}>
             <KeyboardAwareScrollView
-                style={{flex:1, height: '100%'}}
+                style={{ flex: 1, height: '100%' }}
                 contentContainerStyle={{}}
                 enableOnAndroid={true}
                 enableAutomaticScroll={true}
@@ -48,14 +48,14 @@ const Login = () => {
                     </View>
                 </View>
                 <View styles={{}}>
-                    <View style={{width:"100%"}}>
-                        <Image style={{width:"100%",height:280,position:'absolute'}} source={require('../assets/images/reg02.png')}/>
+                    <View style={{ width: "100%" }}>
+                        <Image style={{ width: "100%", height: 280, position: 'absolute' }} source={require('../assets/images/reg02.png')} />
                     </View>
-                    <View style={{width:"100%",marginTop:30}}>
-                        <Image style={{width:"100%",height:280,position:'absolute'}} source={require('../assets/images/reg01.png')}/>
+                    <View style={{ width: "100%", marginTop: 30 }}>
+                        <Image style={{ width: "100%", height: 280, position: 'absolute' }} source={require('../assets/images/reg01.png')} />
                     </View>
-                    <View style={{width:"100%",marginTop:30}}>
-                        <Image style={{width:"100%",height:200}} source={require('../assets/images/reg00.png')}/>
+                    <View style={{ width: "100%", marginTop: 30 }}>
+                        <Image style={{ width: "100%", height: 200 }} source={require('../assets/images/reg00.png')} />
                     </View>
                 </View>
             </KeyboardAwareScrollView>
