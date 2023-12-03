@@ -1,32 +1,40 @@
 import { View, Text, SafeAreaView, Image } from 'react-native'
 import React from 'react'
-import AppHeader from '../components/AppHeader'
-import AppStyle from '../Constants/AppStyle'
+import AppSearch from '../components/AppSearch'
+import { homeStyles } from '../styleSheets/HomeStyles'
 const Home = () => {
     return (
         <SafeAreaView>
-            <AppHeader />
-            <View style={[AppStyle.Sinhvien]}>
-                <Image style={{ width: "100%", height: 111, flexShrink: 0, borderRadius: 5, left: "6%", }} source={require('../../image/Sinhvien.png')}></Image>
+            <AppSearch />
+            <View style={[homeStyles.Sinhvien]}>
+                <Image style={homeStyles.imageSinhvien} source={require('../../image/Sinhvien.png')}></Image>
             </View>
-            <View style={[AppStyle.Khampha]}>
-                <View style={{ width: 358, height: 37, flexShrink: 0, borderRadius: 5, backgroundColor: "#FFF", marginTop: "4%", left: 30 }}>
-                    <Text style={{ color: "#242A37", fontSize: 15, padding: 7, textAlign: "center", }}>Khám Phá Các Danh Mục</Text>
+            <View style={[homeStyles.Khampha]}>
+                <View style={homeStyles.KhamphaDanhMuc}>
+                    <Text style={homeStyles.textKhampha}>Khám Phá Các Danh Mục</Text>
                 </View>
                 <View>
-                    <Image style={{ width: 380, height: 95, flexShrink: 0, marginTop: "5%", left: 18, flexWrap: "nowrap" }} source={require('../../image/Batdongsan.png')}></Image>
-                    <Text style={{ color: "#FFF", fontSize: 15, marginTop: "-20%", left: 25, fontWeight: "bold" }}>Bất động sản</Text>
+                    <Image style={homeStyles.imageBatdongsan} source={require('../../image/Batdongsan.png')}></Image>
+                    <Text style={homeStyles.textBatdongsan}>Bất động sản</Text>
                 </View>
                 <View>
-                    <Image style={{ width: 380, height: 95, flexShrink: 0, marginTop: "18%", left: 18 }} source={require('../../image/Xehoi.png')}></Image>
-                    <Text style={{ color: "#FFF", fontSize: 15, marginTop: "-20%", left: 25, fontWeight: "bold" }}>Xe cộ</Text>
+                    <Image style={homeStyles.imageXehoi} source={require('../../image/Xehoi.png')}></Image>
+                    <Text style={homeStyles.textXeco}>Xe cộ</Text>
                 </View>
-                <View style={{ width: "100%", padding: 20 }}>
-                    <View style={{ backgroundColor: "red", width: "100%", height: 60 }}>
-
+                <View style={homeStyles.ChuyenCanh}>
+                    <View style={homeStyles.ViewCon}>
+                        <Image source={require('../../image/Dodientu.png')} style={homeStyles.DoDienTu} />
+                        <Image source={require('../../image/ThuCung.png')} style={homeStyles.ThuCung} />
                     </View>
+                    <Text style={homeStyles.textDodientu}>Đồ điện tử</Text>
+                    <View style={homeStyles.ViewCon1}>
+                        <Image source={require('../../image/ViecLam.png')} style={homeStyles.DoDienTu} />
+                        <Image source={require('../../image/NoiThat.png')} style={homeStyles.ThuCung} />
+                    </View>
+                    <Text style={homeStyles.textThuCung}>Thú Cưng</Text>
+                    <Text style={homeStyles.textVieLam}>Việc Làm</Text>
+                    <Text style={homeStyles.textNoiThat}>Nội ngoại thất,đồ gia</Text>
                 </View>
-
             </View>
         </SafeAreaView>
     )
