@@ -19,13 +19,19 @@ import {
 import Login from './src/Screens/Login';
 import { UserProvider } from './src/components/users/UserContext';
 import AppNavigation from './src/components/navigation/AppNavigation';
+import Register from './src/Screens/Register';
 
 
 
 function App() {
 
+  // return(
+  //   <Register/>
+  // )
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      
       <UserProvider>
         <AppNavigation />
       </UserProvider>

@@ -12,6 +12,12 @@ export const AppStyle = StyleSheet.create({
         paddingHorizontal: 16,
         paddingVertical: 8
     },
+    title: {
+        fontSize: 25,
+        fontWeight: "700",
+        fontStyle: 'normal',
+        color: COLOR.titlePrimary,
+    },
     titleBig: {
         fontSize: 18,
         fontWeight: "700",
