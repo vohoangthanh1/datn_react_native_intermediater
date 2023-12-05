@@ -7,7 +7,7 @@ export const UserContext = createContext();
 
 export const UserProvider = (props) => {
     const { children } = props;
-    const [user, setuser] = useState(null);
+    const [user, setuser] = useState(true);
     const onLogin = async (email, password) => {
         try {
             const result = await login(email, password);
