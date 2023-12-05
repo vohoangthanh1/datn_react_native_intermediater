@@ -1,11 +1,12 @@
-import { Button, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from 'react-native';
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 import React from 'react';
 
 const DetailResultFind = () => {
     return (
         <View style={styles.body}>
             <View style={styles.header}>
-                <Text style={styles.headerText}>X</Text>
+                <Image source={require('../assets/images/icons/iconX.png')} style={styles.iconHe} />
                 <Text style={styles.headerText}>LỌC KẾT QUẢ</Text>
             </View>
             <View style={styles.danhmuc}>
@@ -18,9 +19,11 @@ const DetailResultFind = () => {
                 <Text style={styles.textDanhMuc}>Sắp xếp theo</Text>
                 <View style={styles.sortButtons}>
                     <TouchableOpacity style={styles.buton}>
+                        <Image source={require('../assets/images/icons/iconClock.png')} style={styles.iconSort} />
                         <Text style={styles.textButon}>Tin mới</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.buton} >
+                    <TouchableOpacity style={styles.butonPrice} >
+                        <Image source={require('../assets/images/icons/iconPrice.png')} style={styles.iconSort} />
                         <Text style={styles.textButon}>Giá thấp</Text>
                     </TouchableOpacity>
                 </View>
@@ -29,15 +32,43 @@ const DetailResultFind = () => {
             <View style={styles.filterOptions}>
                 <Text style={styles.textDanhMuc}>Đăng bởi</Text>
                 <View style={styles.filterItems}>
-                    <Text>Bán chuyên</Text>
-                    <Text>Chính chủ</Text>
+                    <View style={styles.containerDangboi}>
+                        <View style={styles.textBanchuyen}>
+                            <Image source={require('../assets/images/icons/IconPeople.png')} style={styles.iconSort} />
+                            <Text>Bán chuyên</Text>
+                        </View>
+                        <View>
+                            <BouncyCheckbox onPress={(isChecked: boolean) => { }} />
+                        </View>
+                    </View>
+                    <View style={styles.containerCanhan}>
+                        <View style={styles.textBanchuyen}>
+                            <Image source={require('../assets/images/icons/iconCaNhan.png')} style={styles.iconSort} />
+                            <Text>Cá nhân</Text>
+                        </View>
+
+                        <BouncyCheckbox onPress={(isChecked: boolean) => { }} />
+                    </View>
+
                 </View>
             </View>
             <View style={styles.filterOptions}>
                 <Text style={styles.textDanhMuc}>Bạn muốn</Text>
                 <View style={styles.filterItems}>
-                    <Text>Mua</Text>
-                    <Text>Bán</Text>
+                    <View style={styles.contMua}>
+                        <View style={styles.textBanchuyen}>
+                            <Image source={require('../assets/images/icons/iconPurchuse.png')} style={styles.iconSort} />
+                            <Text>Mua</Text>
+                        </View>
+                        <BouncyCheckbox onPress={(isChecked: boolean) => { }} />
+                    </View>
+                    <View style={styles.contBan}>
+                        <View style={styles.textBanchuyen}>
+                            <Image source={require('../assets/images/icons/iconSale.png')} style={styles.iconSort} />
+                            <Text>Bán</Text>
+                        </View>
+                        <BouncyCheckbox onPress={(isChecked: boolean) => { }} />
+                    </View>
                 </View>
             </View>
             <View style={styles.displayOptions}>
@@ -53,7 +84,7 @@ const DetailResultFind = () => {
             </View>
             <View>
                 <TouchableOpacity style={styles.textButon}>
-                    <Text style={styles.applyButton}>Áp dụng</Text>
+                    <Text style={styles.applyButton}>ÁP DỤNG</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -62,25 +93,32 @@ const DetailResultFind = () => {
 
 const styles = StyleSheet.create({
     body: {
-        padding: 20,
-        flex: 1,
+        padding: 10,
+        // flex: 1,
         justifyContent: 'center',
     },
     header: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         marginBottom: 20,
     },
     headerText: {
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: 'bold',
+        alignItems: 'center',
+        marginLeft: 100,
     },
     danhmuc: {
         marginBottom: 20,
+        elevation: 5,
+        borderRadius: 10,
+        padding: 10,
+        backgroundColor: 'white',
+
     },
     textDanhMuc: {
         marginBottom: 5,
-        fontSize: 18,
+        fontSize: 14,
         fontFamily: 'Roboto-Bold',
     },
     input: {
@@ -94,8 +132,13 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     sortButtons: {
+        alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
+        borderRadius: 10,
+        elevation: 5,
+        backgroundColor: 'white',
+        height: 100,
     },
     filterOptions: {
         marginBottom: 20,
@@ -103,6 +146,10 @@ const styles = StyleSheet.create({
     filterItems: {
         flexDirection: 'column',
         justifyContent: 'space-between',
+        borderRadius: 10,
+        elevation: 5,
+        backgroundColor: 'white',
+        height: 70,
     },
     displayOptions: {
         marginBottom: 20,
@@ -110,34 +157,90 @@ const styles = StyleSheet.create({
     displayButtons: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
+        borderRadius: 10,
+        alignItems: 'center',
+        elevation: 5,
+        backgroundColor: 'white',
+        height: 70,
     },
     applyButton: {
         padding: 10,
         backgroundColor: '#FFBF17',
-        color: 'white',
-        fontSize: 20,
-        fontWeight: 'bold',
+        color: 'black',
+        fontSize: 15,
         textAlign: 'center',
         borderRadius: 10,
         alignContent: 'center',
         alignItems: 'center',
     },
     buton: {
+        height: 50,
         padding: 10,
         backgroundColor: '#FFBF17',
         color: 'white',
+        fontSize: 20,
+        fontWeight: 'bold',
+        elevation: 5,
+        textAlign: 'center',
+        borderRadius: 10,
+        alignContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    textButon: {
+        color: 'black',
+        fontSize: 12,
+
+    },
+    iconSort: {
+        width: 15,
+        height: 15,
+        marginRight: 5,
+    },
+    butonPrice: {
+        padding: 10,
+        backgroundColor: 'white',
+        height: 50,
+        color: 'black',
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
         borderRadius: 10,
         alignContent: 'center',
         alignItems: 'center',
+        flexDirection: 'row',
+        elevation: 5,
     },
-    textButon: {
-        color: 'white',
-        fontSize: 12,
-        fontWeight: 'bold',
+    textBanchuyen: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 10,
     },
+    containerDangboi: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+    },
+    containerCanhan: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+    },
+    contMua: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+    },
+    contBan: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+    },
+
 });
 
 export default DetailResultFind;
