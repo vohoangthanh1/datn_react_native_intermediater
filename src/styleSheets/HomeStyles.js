@@ -6,10 +6,10 @@ export const homeStyles = StyleSheet.create({
         padding: 20, backgroundColor: "#FFBF17"
     },
     textInputSearch: {
-        backgroundColor: "white", borderRadius: 5, paddingHorizontal: 10, fontSize: 16
+        backgroundColor: "white", borderRadius: 5, paddingHorizontal: 10, fontSize: 16, height: 40
     },
     imgSearch: {
-        position: "absolute", top: 35, right: 30
+        position: "absolute", top: 30, right: 30
 
     },
     Sinhvien: {

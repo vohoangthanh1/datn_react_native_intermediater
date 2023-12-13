@@ -32,11 +32,11 @@ function App() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      {/* <UserProvider>
+      <UserProvider>
         <AppNavigation />
-      </UserProvider> */}
+      </UserProvider>
       {/* <Login /> */}
-      <DetailResultFind />
+      {/* <DetailResultFind /> */}
     </SafeAreaView>
   );
 }

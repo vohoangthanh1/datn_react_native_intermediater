@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView, StyleSheet, FlatList } from 'react-native'
+import { View, Text, Image, ScrollView, StyleSheet, FlatList, TextInput } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ItemProductStylesSP } from '../styleSheets/ItemProductStylesSP'
@@ -76,7 +76,12 @@ const DanhMucSPP = () => {
     const data_header = ["Dung lượng cao", "Game", "Trả góp", "Bảo hành", "Chưa dùng", "Pin trâu"]
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <AppSearch2 />
+            <View style={DanhMucSPStyless.viewSearch}>
+                <Image style={DanhMucSPStyless.imgBack} source={require('../../image/Left.png')} />
+                <TextInput style={DanhMucSPStyless.textInputSearch} placeholder='Tìm kiếm trên chợ tốt' />
+                <Image style={DanhMucSPStyless.imgSearch} source={require('../../image/search.png')} />
+                <Image style={DanhMucSPStyless.imgRightInputSearch} source={require('../../image/Left2.png')} />
+            </View>
             <View style={DanhMucSPStyless.View1}>
                 <SelectCountry
                     style={[DanhMucSPStyless.dropdown, { flex: 2 }]}
