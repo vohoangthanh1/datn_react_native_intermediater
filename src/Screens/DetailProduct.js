@@ -128,7 +128,7 @@ const DetailProduct = () => {
               </View>
               <View style={styles.row}>
                 <Image source={require('../assets/images/icons/iconProtect.png')} style={styles.image} />
-                <Text style={styles.textdetailInfoProduct}>Tình trạng bảo hành: Còn bảo hành</Text> 
+                <Text style={styles.textdetailInfoProduct}>Tình trạng bảo hành: Còn bảo hành</Text>
                 <Text style={styles.textdetailInfoProduct}></Text>
               </View>
             </View>
@@ -438,7 +438,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 5,
     elevation: 5,
-    
+
   },
   contentDecs: {
     padding: 10,
@@ -458,7 +458,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     // alignItems: 'center',
     width: "50%",
-   
+
   },
   col2: {
     padding: 10,
@@ -486,6 +486,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
   },
- 
+
 
 })

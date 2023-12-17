@@ -6,6 +6,7 @@ const Home = () => {
 
     return (
         <SafeAreaView>
+
             <View style={homeStyles.viewSearch}>
                 <TextInput style={homeStyles.textInputSearch} placeholder='Tìm kiếm trên chợ tốt' />
                 <Image style={homeStyles.imgSearch} source={require('../../image/search.png')} />

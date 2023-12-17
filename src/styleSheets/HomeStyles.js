@@ -52,13 +52,13 @@ export const homeStyles = StyleSheet.create({
         width: "100%", minHeight: 300, paddingVertical: 20, flexDirection: 'row'
     },
     ViewCon: {
-        flex: 1, justifyContent: 'center', alignItems: "center"
+        flex: 1, justifyContent: 'center', alignItems: "center", marginRight: 20
     },
     DoDienTu: {
-        width: "85%"
+        width: "100%"
     },
     ThuCung: {
-        marginTop: 10, width: "85%"
+        marginTop: 10, width: "100%"
     },
     textDodientu: {
         position: "absolute", top: "10%", left: "5%", fontSize: 13, color: "#FFF", fontWeight: "500"
