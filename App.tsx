@@ -21,6 +21,7 @@ import { UserProvider } from './src/components/users/UserContext';
 import AppNavigation from './src/components/navigation/AppNavigation';
 import DetailResultFind from './src/Screens/DetailResultFind';
 import Register from './src/Screens/Register';
+import DetailProduct from './src/Screens/DetailProduct';
 
 
 
@@ -32,11 +33,11 @@ function App() {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <UserProvider>
+      {/* <UserProvider>
         <AppNavigation />
-      </UserProvider>
+      </UserProvider> */}
       {/* <Login /> */}
-      {/* <DetailResultFind /> */}
+      <DetailProduct />
     </SafeAreaView>
   );
 }
