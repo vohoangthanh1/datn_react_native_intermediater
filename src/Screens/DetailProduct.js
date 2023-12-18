@@ -299,7 +299,6 @@ const styles = StyleSheet.create({
   },
   timeIn: {
     fontSize: 8,
-    fontWeight: 'nomal',
     color: 'black',
     marginLeft: 10,
   },
